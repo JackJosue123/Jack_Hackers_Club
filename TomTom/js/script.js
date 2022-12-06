@@ -1,9 +1,10 @@
 // script file start here
 
 /*-------API KEYS------*/
-const keys = {
-    key: "vHY8HBoyFKPfbwRlKjgz4iC52FcHsdfk",
-}
+/*const keys = {
+    key: "api key in this cotation mark",
+    
+}*/
 
 /*-------CONTROLLERS PARAMS----*/
 var MADRID = [-3.703790, 40.416775]
