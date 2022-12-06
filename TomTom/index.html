@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TomTom NEXT - Challenge #3</title>
+    <!-- CDN assets -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps.css'/>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps-web.min.js'></script>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/services/services-web.min.js'></script>
+</head>
+<body>
+    <!-- MAP - CONTAINER -->
+    <div class="container" id="container">
+        <header class="header" id="header">
+            <input type="text" id="query" value="" required="required" placeholder="Enter your destination point...">
+            <button id="location">Go</button>
+            <p>Your current location:</p><p id="status">&nbsp; Not yet defined.</p>
+        </header>
+        <div class="map" id="map"></div>
+    </div>
+    <!-- Assets - Javascript -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
