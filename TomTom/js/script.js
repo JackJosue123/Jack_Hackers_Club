@@ -1,9 +1,13 @@
 /*----------------script file start here---------------------*/
-
+window.addEventListener("load", () =>{
+    //Before get and set search result, access to user location
+    findMyPosition();
+    //let user control the map
+    setControlsMap();
+});
 /*-------API KEYS------*/
 const keys = {
-    key: "api key in this cotation mark",
-    
+    key: "<your_api_key>"
 }
 
 /*-------CONTROLLERS PARAMS----*/
@@ -42,8 +46,6 @@ function isMobileOrTablet(){var i,a =!1;return i=navigator.userAgent||navigator.
 /*------MANAGE LISTENER HERE-----*/
 //listen if button #go is cliked
 document.getElementById("location").addEventListener("click", () =>{
-    //Before get and set search result, access to user location
-    findMyPosition();
     let querySearch = document.getElementById("query").value;
     if(querySearch == ""){
         alert("You must select your destination location !!!");
@@ -75,6 +77,50 @@ function setTrip(querySearch){
 
 //find the current user location
 function findMyPosition(){
+    //tt.setProductInfo("<your_product_name>", "your_product_version");
+    var messages = {
+        permissionDenied: "Permission denied. You can change your browser settings...",
+        notAvailable: "Geolocation data provider not aavailable."
+    }
+    //For the geolocate plugin
+    var geolocateControl = new tt.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: false
+        }
+    });
+    bindEvents();
+    //Handle case when domain permissions are already blocked
+    handlePermissionDenied();
+    map.addControl(geolocateControl);
+    function handlePermissionDenied(){
+        if("permissions" in navigator){
+            navigator.permissions.query({name: "geolocation"})
+            .then(function(result){
+                if(result.state === 'denied'){
+                    displayErrorMessage(messages.permissionDenied);
+                }
+            });
+        }
+    }
+    function bindEvents(){
+        geolocateControl.on('error', handleError);
+    }
+    function displayErrorMessage(message){
+        status.textContent = message;
+    }
+    function handleError(error){
+        switch(error.code){
+            case error.PERMISSION_DENIED:
+                displayErrorMessage(messages.permissionDenied);
+                break;
+            case error.POSITION_UNAVAILABLE:
+            case error.TIMEOUT:
+                displayErrorMessage(messages.notAvailable);
+        }
+    }
+    
+    
+    
     const status = document.getElementById("status");
 
     const success = (position) => {
@@ -86,4 +132,8 @@ function findMyPosition(){
     }
 
     navigator.geolocation.getCurrentPosition(success, error);
+}
+function setControlsMap(){
+    map.addControl(new tt.FullscreenControl());
+    map.addControl(new tt.NavigationControl());
 }
