@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TomTom NEXT - Challenge #3</title>
+    <meta name="theme-color" content="#DC134C">
+    <link rel="apple-touch-icon" href="./assets/192.jpg">
     <!-- CDN assets -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps.css'/>
+    <link rel="stylesheet" href="./local/index.css">
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.21.3/maps/maps.css'>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps-web.min.js'></script>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/services/services-web.min.js'></script>
-    <script src='./local/formatters.js' async="defer"></script>
+    <script src='./local/formatters.js'></script>
+    <script src='./local/foldable.js'></script>
+    <!-- make to pwa -->
+    <link rel="manifest" href="./manifest.json">
+    <script src="./js/pwa.js"></script>
 </head>
 <body>
     <!-- MAP - CONTAINER -->
@@ -22,7 +29,18 @@
             </div>
             <p>Your current location:&nbsp;</p><p id="status">Not yet defined.</p>
         </header>
-        <div class="map" id="map"></div>
+        <div class="map" id="map">
+            <div id='foldable' class='tt-overlay-panel -left-top -medium js-foldable'>
+                <form id=form>
+                    <div id='startSearchBox' class='searchbox-container'>
+                        <div class='tt-icon tt-icon-size icon-spacing-right -start'></div>
+                    </div>
+                    <div id='finishSearchBox' class='searchbox-container'>
+                        <div class='tt-icon tt-icon-size icon-spacing-right -finish'></div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <!-- Assets - Javascript -->
     <script src="./js/script.js"></script>
