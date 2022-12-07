@@ -7,7 +7,7 @@ window.addEventListener("load", () =>{
 });
 /*-------API KEYS------*/
 const keys = {
-    key: "vHY8HBoyFKPfbwRlKjgz4iC52FcHsdfk"
+    key: "<your_tomtom_api_code_here>"
 }
 
 /*-------CONTROLLERS PARAMS----*/
