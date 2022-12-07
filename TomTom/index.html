@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./local/index.css">
     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.21.3/maps/maps.css'>
-    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps-web.min.js'></script>
-    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/services/services-web.min.js'></script>
     <script src='./local/formatters.js'></script>
     <script src='./local/foldable.js'></script>
+    <link rel='stylesheet' type='text/css' href='./local/routing.css'/>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.2.0/SearchBox.css'/>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.2.0/SearchBox-web.js'></script>
     <!-- make to pwa -->
     <link rel="manifest" href="./manifest.json">
     <script src="./js/pwa.js"></script>
@@ -29,7 +30,7 @@
             </div>
             <p>Your current location:&nbsp;</p><p id="status">Not yet defined.</p>
         </header>
-        <div class="map" id="map">
+        <div id='map' class='map'>
             <div id='foldable' class='tt-overlay-panel -left-top -medium js-foldable'>
                 <form id=form>
                     <div id='startSearchBox' class='searchbox-container'>
@@ -43,6 +44,12 @@
         </div>
     </div>
     <!-- Assets - Javascript -->
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps-web.min.js'></script>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/services/services-web.min.js'></script>
+    <script data-showable type='text/javascript' src='./local/info-hint.js'></script>
+    <script data-showable type='text/javascript' src='./local/searchbox-enter-submit.js'></script>
+    <script data-showable type='text/javascript' src='./local/foldable.js'></script>
     <script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
