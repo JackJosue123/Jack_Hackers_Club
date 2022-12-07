@@ -10,14 +10,17 @@
     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps.css'/>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/maps/maps-web.min.js'></script>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.53.0/services/services-web.min.js'></script>
+    <script src='./local/formatters.js' async="defer"></script>
 </head>
 <body>
     <!-- MAP - CONTAINER -->
     <div class="container" id="container">
         <header class="header" id="header">
-            <input type="text" id="query" value="" required="required" placeholder="Enter your destination point...">
-            <button id="location">Go</button>
-            <p>Your current location:</p><p id="status">&nbsp; Not yet defined.</p>
+            <div>
+                <input type="text" id="query" value="" required="required" placeholder="Enter your destination point...">
+                <button id="location">Go</button>
+            </div>
+            <p>Your current location:&nbsp;</p><p id="status">Not yet defined.</p>
         </header>
         <div class="map" id="map"></div>
     </div>

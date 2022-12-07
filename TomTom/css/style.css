@@ -54,3 +54,16 @@ body{
 #header p{
     display: inline-block;
 }
+
+/*----RESPONSIVE PART---*/
+@media only screen and (max-width: 990px) {
+    #header{
+        display: block;
+    }
+    #header input{
+        width: 80%;
+    }
+    #header button{
+        width: 18%;
+    }
+}
