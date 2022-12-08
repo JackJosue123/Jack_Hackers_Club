@@ -1,7 +1,7 @@
 {
   "name": "TomTom.",
   "short_name": "TomTom.",
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "background_color": "#121213",
   "theme_color": "#DC134C",
   "orientation " : "portrait-primary",

@@ -1,7 +1,7 @@
 /*-----------SERVICE WORKER--------------------*/ 
 var CACHE_NAME = "tomtom-cache-v1";
 var assets = [
-	"/",
+	"./index.html",
 	"./",
 	"./css/styles.css"
 ];	
